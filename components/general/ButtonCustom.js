@@ -11,7 +11,7 @@ const ButtonCustom = (props) => {
       ]}
       onPress={() => props.onPress()}
     >
-      <Text>{props.title}</Text>
+      <Text style={[tw`text-center w-full font-semibold`]}>{props.title}</Text>
     </TouchableOpacity>
   );
 };

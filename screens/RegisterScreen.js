@@ -45,16 +45,16 @@ const RegisterScreen = () => {
                 <Text style={[tw`font-bold`]}>Kebijakan Privasi</Text>
               </Text>
             </View>
-            <View style={[tw`items-center`]}>
-              <ButtonCustom
-                title="Daftar"
-                style={[tw`mt-8 mb-4 bg-primary border-0`]}
-                onPress={() => Navigation.navigate("LoginScreen")}
-              />
-            </View>
+            <ButtonCustom
+              title="Daftar"
+              style={[tw`mt-8 mb-4 bg-primary border-0 `]}
+              onPress={() => Navigation.navigate("LoginScreen")}
+            />
             <Text style={[tw`text-center mb-5`]}>
-              Sudah Disini?{" "}
-              <Text style={[tw`font-bold underline text-center text-primary `]}>
+              Sudah Disini?{"    "}
+              <Text
+                style={[tw`font-bold underline text-center text-primary  `]}
+              >
                 Masuk
               </Text>
             </Text>
