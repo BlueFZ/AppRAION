@@ -1,17 +1,31 @@
-import { StyleSheet, Text, View, TextInput, Image } from 'react-native'
+import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
+import { useNavigation } from "@react-navigation/native";
 
 const HomeScreen = () => {
+  
   return (
-    <View style={{flex: 1}}>
+    <View>
+      <Image
+      source={require('../icon/Home.png')}
+      style={styles.home}
+      />
+      <Image
+      source={require('../icon/bars.png')}
+      style={styles.bars}
+      />
+      <Image
+        source={require('../icon/foto.png')}
+        style={styles.Foto}
+        />
       <View style={styles.Search}>
         <TextInput 
-        placeholder="Search here"
+        placeholder="Cari..."
         style={styles.InputSearch}
         />
         <Image 
         source={require('../icon/search.png')}
-        style={styles.Icon}
+        style={styles.SearchIcon}
         />
       </View>
     </View>
@@ -22,16 +36,22 @@ export default HomeScreen
 
 const styles = StyleSheet.create({
 
+  Home: {
+    flex: 1,
+    backgroundColor: "white",
+  },
+
   Search: {
-    marginTop: 40,
+
     borderWidth: 1,
     backgroundColor: "white",
-    borderColor: '#E8E8E8',
+    borderColor: 'grey',
     borderRadius: 25,
     height: 40,
-    paddingLeft: 40,
-    paddingRight: 5,
-    marginHorizontal: 20,
+    paddingLeft: 10,
+    paddingRight: 40,
+    marginHorizontal: 50,
+    top: -45,
 
   },
 
@@ -42,9 +62,30 @@ const styles = StyleSheet.create({
     color: "black",
   },
 
-  Icon: {
-    position: 'absolute',
-    top: 7,
-    left: 8,
+  SearchIcon: {
+    
+    top: -25,
+    left: 240,
+  },
+
+  Foto: {
+    
+    top: 135,
+    left: 16,
+  },
+
+  bars: {
+    top: 37,
+    left: 25,
+  },
+
+  home: {
+    top: 52,
+    left: 163,
+  },
+
+  notif: {
+    top: 73,
+    left: 355,
   },
 })

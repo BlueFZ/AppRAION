@@ -14,11 +14,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 const LoginScreen = () => {
   const Navigation = useNavigation();
   return (
-    <SafeAreaView>
-       <Image
-        source={require('../assets/SignIn.png')}
-        style={styles.image}
-        />
       <KeyboardAvoidingView  style={styles.container} behavior="padding">
         <View style={styles.inputContainer}>
           <TextInput
@@ -50,8 +45,7 @@ const LoginScreen = () => {
             <Text style={styles.buttonOutlineText}>Register</Text>
           </TouchableOpacity>
         </View>
-      </KeyboardAvoidingView>
-    </SafeAreaView>  
+      </KeyboardAvoidingView>  
   );
 };
 
