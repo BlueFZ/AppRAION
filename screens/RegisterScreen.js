@@ -20,7 +20,7 @@ const RegisterScreen = () => {
         <HeaderCustom title="Daftar" style={[Styles.container]} />
         <ScrollView
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={Styles.container}
+          contentContainerStyle={[tw` `, Styles.container]}
         >
           <View style={[tw`mx-5 mt-12`]}>
             <InputCustom title="Nama Lengkap" />
@@ -50,7 +50,7 @@ const RegisterScreen = () => {
               style={[tw`mt-8 mb-4 bg-primary border-0 `]}
               onPress={() => Navigation.navigate("LoginScreen")}
             />
-            <Text style={[tw`text-center mb-5`]}>
+            <Text style={[tw`text-center mb-5 mt-40`]}>
               Sudah Disini?{"    "}
               <Text
                 style={[tw`font-bold underline text-center text-primary  `]}

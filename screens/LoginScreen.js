@@ -9,49 +9,57 @@ import {
   View,
   Image,
 } from "react-native";
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView } from "react-native-safe-area-context";
+import ButtonCustom from "../components/general/ButtonCustom";
+import InputCustom from "../components/general/InputCustom";
+import Images from "../constans/Images";
+import tw from "../lib/tailwind";
+import Styles from "../styles/Global";
 
 const LoginScreen = () => {
   const Navigation = useNavigation();
   return (
-    <SafeAreaView>
-       <Image
-        source={require('../assets/SignIn.png')}
-        style={styles.image}
-        />
-      <KeyboardAvoidingView  style={styles.container} behavior="padding">
-        <View style={styles.inputContainer}>
-          <TextInput
-            placeholder="Email"
-            // value={email}
-            // onChangeText={text => setEmail(text)}
-            style={styles.input}
-          />
-          <TextInput
-            placeholder="Password"
-            // value={password}
-            // onChangeText={text => setPassword(text)}
-            style={styles.input}
-            secureTextEntry
-          />
-        </View>
+    <>
+      <Image source={Images.LoginHeader} style={[tw`w-full `]} />
+      <View style={[tw`items-center absolute w-full top-15`]}>
+        <Image source={Images.Logo} />
+      </View>
 
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity
-            onPress={() => Navigation.navigate("HomeScreen")}
-            style={styles.button}
-          >
-            <Text style={styles.buttonText}>Login</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => Navigation.navigate("RegisterScreen")}
-            style={[styles.button, styles.buttonOutline]}
-          >
-            <Text style={styles.buttonOutlineText}>Register</Text>
-          </TouchableOpacity>
-        </View>
-      </KeyboardAvoidingView>
-    </SafeAreaView>  
+      <SafeAreaView style={[tw`justify-between flex-1`]}>
+        <KeyboardAvoidingView
+          style={[Styles.container, tw` flex-1 justify-between mb-20`]}
+          behavior="margin"
+        >
+          <View>
+            <Text style={[tw`text-2xl font-bold`]}>
+              Kembangkan Ilmu bersama!
+            </Text>
+            <Text style={[tw`text-lg`]}>Yuk, Gabung bersama kami!</Text>
+            <View style={[tw`mt-5`]}>
+              <InputCustom title="Email" icon="email-outline" />
+              <InputCustom title="Password" icon="eye-outline" />
+              <ButtonCustom
+                title="Masuk"
+                style={[tw`bg-primary my-5`]}
+                styleText={[tw`text-white`]}
+              />
+            </View>
+            <Text style={[tw`text-primary underline font-bold`]}>
+              Lupa Password?
+            </Text>
+          </View>
+          <Text style={[tw`text-center `]}>
+            Belum mempunyai akun?{" "}
+            <Text
+              style={[tw`text-primary underline font-bold`]}
+              onPress={() => Navigation.navigate("RegisterScreen")}
+            >
+              Daftar
+            </Text>
+          </Text>
+        </KeyboardAvoidingView>
+      </SafeAreaView>
+    </>
   );
 };
 
