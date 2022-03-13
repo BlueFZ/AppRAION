@@ -10,11 +10,11 @@ import {
   Image,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import ButtonCustom from "../components/general/ButtonCustom";
-import InputCustom from "../components/general/InputCustom";
-import Images from "../constans/Images";
-import tw from "../lib/tailwind";
-import Styles from "../styles/Global";
+import ButtonCustom from "../../components/general/ButtonCustom";
+import InputCustom from "../../components/general/InputCustom";
+import Images from "../../constans/Images";
+import tw from "../../lib/tailwind";
+import Styles from "../../styles/Global";
 
 const LoginScreen = () => {
   const Navigation = useNavigation();
@@ -42,9 +42,13 @@ const LoginScreen = () => {
                 title="Masuk"
                 style={[tw`bg-primary my-5`]}
                 styleText={[tw`text-white`]}
+                onPress={() => Navigation.navigate("HomeScreen")}
               />
             </View>
-            <Text style={[tw`text-primary underline font-bold`]}>
+            <Text
+              style={[tw`text-primary underline font-bold`]}
+              onPress={() => Navigation.navigate("ForgotScreen")}
+            >
               Lupa Password?
             </Text>
           </View>
