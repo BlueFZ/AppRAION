@@ -5,29 +5,21 @@ import { useNavigation } from "@react-navigation/native";
 const HomeScreen = () => {
   
   return (
-    <View>
-      <Image
-      source={require('../icon/Home.png')}
-      style={styles.home}
-      />
-      <Image
-      source={require('../icon/bars.png')}
-      style={styles.bars}
-      />
-      <Image
-        source={require('../icon/foto.png')}
-        style={styles.Foto}
-        />
-      <View style={styles.Search}>
-        <TextInput 
+    <View style={styles.container}>
+      <TouchableOpacity style={styles.bars}>
+       <Image source={require('../icon/bars.png')}/>
+      </TouchableOpacity>
+      
+      <Image source={require('../icon/Home.png')} style={styles.home}/>
+
+      <TouchableOpacity style={styles.notif}>
+        <Image source={require('../icon/notif.png')}/>
+      </TouchableOpacity>
+
+      <TextInput 
         placeholder="Cari..."
         style={styles.InputSearch}
         />
-        <Image 
-        source={require('../icon/search.png')}
-        style={styles.SearchIcon}
-        />
-      </View>
     </View>
   )
 }
@@ -41,8 +33,25 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
 
-  Search: {
+  // Search: {
 
+  //   borderWidth: 1,
+  //   backgroundColor: "white",
+  //   borderColor: 'grey',
+  //   borderRadius: 25,
+  //   height: 40,
+  //   paddingLeft: 10,
+  //   paddingRight: 40,
+  //   marginHorizontal: 50,
+  //   top: -45,
+
+  // },
+
+  InputSearch: {
+    width: "80%",
+    fontSize: 15,
+    marginTop: 4,
+    color: "black",
     borderWidth: 1,
     backgroundColor: "white",
     borderColor: 'grey',
@@ -51,15 +60,8 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 40,
     marginHorizontal: 50,
-    top: -45,
-
-  },
-
-  InputSearch: {
-    width: "80%",
-    fontSize: 15,
-    marginTop: 4,
-    color: "black",
+    top: 23,
+    left: -10
   },
 
   SearchIcon: {
@@ -75,17 +77,26 @@ const styles = StyleSheet.create({
   },
 
   bars: {
-    top: 37,
-    left: 25,
+    top: 45,
+    left: 15,
   },
 
   home: {
-    top: 52,
+    justifyContent: 'center',
+    top: 32,
     left: 163,
   },
 
   notif: {
-    top: 73,
+    top: 18,
     left: 355,
   },
+
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+
+  
+  
 })
