@@ -37,7 +37,7 @@ const LoginScreen = () => {
             <Text style={[tw`text-lg`]}>Yuk, Gabung bersama kami!</Text>
             <View style={[tw`mt-5`]}>
               <InputCustom title="Email" icon="email-outline" />
-              <InputCustom title="Password" icon="eye-outline" />
+              <InputCustom title="Password" icon="eye-outline"/>
               <ButtonCustom
                 title="Masuk"
                 style={[tw`bg-primary my-5`]}

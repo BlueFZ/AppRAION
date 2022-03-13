@@ -6,6 +6,10 @@ import LoginScreen from "../screens/Auth/LoginScreen";
 import HomeScreen from "../screens/HomeScreen";
 import RegisterScreen from "../screens/Auth/RegisterScreen";
 import ForgotScreen from "../screens/Auth/ForgotScreen";
+import NotificationScreen from "../screens/Notification/NotificationScreen";
+import EducationScreen from "../screens/Edukasi/EducationScreen";
+import EventScreen from "../screens/Event/EventScreen";
+import TeachfessScreen from "../screens/Teachfess/TeachfessScreen";
 
 const MainNavigation = () => {
   const Stack = createNativeStackNavigator();
@@ -47,6 +51,34 @@ const MainNavigation = () => {
             headerShown: false,
           }}
           component={ForgotScreen}
+        />
+        <Stack.Screen
+          name="NotificationScreen"
+          options={{
+            headerShown: true,
+          }}
+          component={NotificationScreen}
+        />
+        <Stack.Screen
+          name="EducationScreen"
+          options={{
+            headerShown: true,
+          }}
+          component={EducationScreen}
+        />
+        <Stack.Screen
+          name="EventScreen"
+          options={{
+            headerShown: true,
+          }}
+          component={EventScreen}
+        />
+        <Stack.Screen
+          name="TeachfessScreen"
+          options={{
+            headerShown: true,
+          }}
+          component={TeachfessScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
