@@ -16,7 +16,7 @@ const HeaderCustom = (props) => {
         >
           <Icon name="chevron-left" />
         </TouchableOpacity>
-        <Text style={[tw`text-lg font-bold text-secondary`]}>
+        <Text style={[tw`text-2xl font-extrabold text-primary`]}>
           {props.title}
         </Text>
       </View>

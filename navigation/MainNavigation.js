@@ -1,15 +1,24 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { NavigationContainer } from "@react-navigation/native";
-import LoginScreen from "../screens/LoginScreen";
+import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
+import LoginScreen from "../screens/Auth/LoginScreen";
 import HomeScreen from "../screens/HomeScreen";
-import RegisterScreen from "../screens/RegisterScreen";
+import RegisterScreen from "../screens/Auth/RegisterScreen";
+import ForgotScreen from "../screens/Auth/ForgotScreen";
 
 const MainNavigation = () => {
   const Stack = createNativeStackNavigator();
+  const MyTheme = {
+    ...DefaultTheme,
+    colors: {
+      ...DefaultTheme.colors,
+      primary: "rgb(255, 45, 85)",
+      background: "#fff",
+    },
+  };
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={MyTheme}>
       <Stack.Navigator>
         <Stack.Screen
           name="LoginScreen"
@@ -18,12 +27,12 @@ const MainNavigation = () => {
             headerShown: false,
           }}
         />
-        <Stack.Screen 
-        name="HomeScreen" 
-        component={HomeScreen} 
-        options={{
-          headerShown: false,
-        }}
+        <Stack.Screen
+          name="HomeScreen"
+          component={HomeScreen}
+          options={{
+            headerShown: false,
+          }}
         />
         <Stack.Screen
           name="RegisterScreen"
@@ -31,6 +40,13 @@ const MainNavigation = () => {
             headerShown: false,
           }}
           component={RegisterScreen}
+        />
+        <Stack.Screen
+          name="ForgotScreen"
+          options={{
+            headerShown: false,
+          }}
+          component={ForgotScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

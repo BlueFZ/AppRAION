@@ -6,12 +6,14 @@ const ButtonCustom = (props) => {
   return (
     <TouchableOpacity
       style={[
-        tw`border border-gray-500 flex-wrap items-baseline rounded-md px-6 py-1 shadow-lg`,
+        tw`  flex-wrap items-baseline rounded-md px-6 py-3  bg-white`,
         props.style,
       ]}
-      onPress={() => props.onPress()}
+      onPress={() => props.onPress && props.onPress()}
     >
-      <Text style={[tw`text-center w-full font-semibold`]}>{props.title}</Text>
+      <Text style={[tw`text-center w-full font-bold`, props.styleText]}>
+        {props.title}
+      </Text>
     </TouchableOpacity>
   );
 };

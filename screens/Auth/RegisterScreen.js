@@ -1,14 +1,14 @@
 import { View, Text, ScrollView, KeyboardAvoidingView } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import HeaderCustom from "../components/header/HeaderCustom";
-import Styles from "../styles/Global";
-import InputCustom from "../components/general/InputCustom";
+import HeaderCustom from "../../components/header/HeaderCustom";
+import Styles from "../../styles/Global";
+import InputCustom from "../../components/general/InputCustom";
 import { CheckBox } from "react-native-elements";
-import tw from "../lib/tailwind";
-import ButtonCustom from "../components/general/ButtonCustom";
-import PickerCustom from "../components/general/PickerCustom";
-import GradueItem from "../constans/GradueItem";
+import tw from "../../lib/tailwind";
+import ButtonCustom from "../../components/general/ButtonCustom";
+import PickerCustom from "../../components/general/PickerCustom";
+import GradueItem from "../../constans/GradueItem";
 import { useNavigation } from "@react-navigation/native";
 
 const RegisterScreen = () => {
@@ -20,7 +20,7 @@ const RegisterScreen = () => {
         <HeaderCustom title="Daftar" style={[Styles.container]} />
         <ScrollView
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={Styles.container}
+          contentContainerStyle={[tw` `, Styles.container]}
         >
           <View style={[tw`mx-5 mt-12`]}>
             <InputCustom title="Nama Lengkap" />
@@ -47,13 +47,15 @@ const RegisterScreen = () => {
             </View>
             <ButtonCustom
               title="Daftar"
-              style={[tw`mt-8 mb-4 bg-primary border-0 `]}
+              style={[tw`bg-primary my-5`]}
+              styleText={[tw`text-white`]}
               onPress={() => Navigation.navigate("LoginScreen")}
             />
-            <Text style={[tw`text-center mb-5`]}>
+            <Text style={[tw`text-center mb-5 mt-40`]}>
               Sudah Disini?{"    "}
               <Text
                 style={[tw`font-bold underline text-center text-primary  `]}
+                onPress={() => Navigation.navigate("LoginScreen")}
               >
                 Masuk
               </Text>
