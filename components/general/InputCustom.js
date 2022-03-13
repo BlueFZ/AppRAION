@@ -19,6 +19,7 @@ const InputCustom = (props) => {
             tw`w-full border-2 border-gray-300 my-2 rounded-md px-4 py-2 shadow-md bg-white`,
           ]}
           placeholder={props.placeholder}
+          secureTextEntry={props.secureTextEntry}
         />
       </View>
     </View>

@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View, TextInput, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useNavigation } from "@react-navigation/native";
+import tw from "../lib/tailwind";
+import MaterialIcon from "react-native-vector-icons/MaterialCommunityIcons";
 
 const HomeScreen = () => {
   const Navigation = useNavigation();
@@ -17,7 +19,7 @@ const HomeScreen = () => {
       </TouchableOpacity>
 
       <TextInput 
-        placeholder="Cari..."
+        placeholder="Telusuri"
         style={styles.InputSearch}
       />
 
@@ -30,45 +32,32 @@ const HomeScreen = () => {
         source={require('../icon/foto.png')}
         style={styles.Foto}
       />
-
-      <Image
-        source={require('../icon/red.png')}
-        style={styles.red}
-      />
       
-      <TouchableOpacity style={styles.topi} onPress={() => Navigation.navigate("EducationScreen")}>
-        <Image source={require('../icon/topi.png')}/>
-      </TouchableOpacity>
-      <Image
-        source={require('../icon/Edukasi.png')}
-        style={styles.edu}
-      />
+      <View style={[tw`flex-row justify-center mt-10`]}>
+        <TouchableOpacity onPress={() => Navigation.navigate("EducationScreen")} style={[tw`justify-center items-center`]}>
+          <View style={[tw`p-3 rounded-full bg-red-400 justify-center items-center self-start mx-4`]}>
+            <MaterialIcon name="school-outline" size={28}/>
+          </View>  
+            <Text>Edukasi</Text>
+        </TouchableOpacity>
 
-      <Image
-        source={require('../icon/ijo.png')}
-        style={styles.ijo}
-      />
+        <TouchableOpacity onPress={() => Navigation.navigate("EventScreen")} style={[tw`justify-center items-center`]}>
+          <View style={[tw`p-3 rounded-full bg-green-400 justify-center items-center self-start mx-4`]}>
+            <MaterialIcon name="calendar-outline" size={28}/>
+          </View>  
+            <Text>Event</Text>
+        </TouchableOpacity>
 
-      <TouchableOpacity style={styles.calender} onPress={() => Navigation.navigate("EventScreen")}>
-      <Image source={require('../icon/calender.png')}/>
-      </TouchableOpacity>
-      <Image
-        source={require('../icon/Event.png')}
-        style={styles.event}
-      />
+        <TouchableOpacity onPress={() => Navigation.navigate("TeachfessScreen")} style={[tw`justify-center items-center`]}>
+          <View style={[tw`p-3 rounded-full bg-blue-400 justify-center items-center self-start mx-4`]}>
+            <MaterialIcon name="clipboard-account-outline" size={28}/>
+          </View>  
+            <Text>Teachfess</Text>
+        </TouchableOpacity>
+      
+      </View>
 
-      <Image
-        source={require('../icon/biru.png')}
-        style={styles.biru}
-      />
-
-      <TouchableOpacity style={styles.tech} onPress={() => Navigation.navigate("TeachfessScreen")}>
-      <Image source={require('../icon/tech.png')}/>
-      </TouchableOpacity>
-      <Image
-        source={require('../icon/Teach.png')}
-        style={styles.teach}
-      />
+      
 
     </View>
   )

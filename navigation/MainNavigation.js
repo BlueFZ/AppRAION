@@ -10,6 +10,10 @@ import NotificationScreen from "../screens/Notification/NotificationScreen";
 import EducationScreen from "../screens/Edukasi/EducationScreen";
 import EventScreen from "../screens/Event/EventScreen";
 import TeachfessScreen from "../screens/Teachfess/TeachfessScreen";
+import ProfileScreen from "../screens/Teachfess/ProfileScreen";
+import ChatScreen from "../screens/Teachfess/ChatScreen";
+import LombaScreen from "../screens/Event/Lomba/LombaScreen";
+import WebinarScreen from "../screens/Event/Webinar/WebinarScreen";
 
 const MainNavigation = () => {
   const Stack = createNativeStackNavigator();
@@ -79,6 +83,34 @@ const MainNavigation = () => {
             headerShown: true,
           }}
           component={TeachfessScreen}
+        />
+        <Stack.Screen
+          name="ProfileScreen"
+          options={{
+            headerShown: true,
+          }}
+          component={ProfileScreen}
+        />
+        <Stack.Screen
+          name="ChatScreen"
+          options={{
+            headerShown: true,
+          }}
+          component={ChatScreen}
+        />
+        <Stack.Screen
+          name="LombaScreen"
+          options={{
+            headerShown: true,
+          }}
+          component={LombaScreen}
+        />
+        <Stack.Screen
+          name="WebinarScreen"
+          options={{
+            headerShown: true,
+          }}
+          component={WebinarScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
