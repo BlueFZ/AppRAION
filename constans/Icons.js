@@ -19,5 +19,13 @@ const Icons = {
   Ticket: require("../assets/icons/Ticket.png"),
   Like: require("../assets/icons/Like.png"),
   Cam: require("../assets/icons/Cam.png"),
+  ProfileRounded: require("../assets/icons/ProfileRounded.png"),
+  AddPoto: require("../assets/icons/AddPoto.png"),
+  AddImage: require("../assets/icons/AddImage.png"),
+  AddEmoji: require("../assets/icons/AddEmoji.png"),
+  Messages: require("../assets/icons/Messages.png"),
+  Heart: require("../assets/icons/Heart.png"),
+  Share: require("../assets/icons/Share.png"),
+  More: require("../assets/icons/More.png"),
 };
 export default Icons;
