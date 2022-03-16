@@ -8,5 +8,7 @@ const Images = {
   Tren1: require("../assets/Images/Tren1.png"),
   Tren2: require("../assets/Images/Tren2.png"),
   Friend: require("../assets/Images/Friend.png"),
+  ProfileHeader: require("../assets/Images/Profileheader.png"),
+  User: require("../assets/Images/User.png"),
 };
 export default Images;

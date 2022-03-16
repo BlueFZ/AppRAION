@@ -22,7 +22,7 @@ const MainNavigation = () => {
     ...DefaultTheme,
     colors: {
       ...DefaultTheme.colors,
-      primary: "rgb(255, 45, 85)",
+      primary: "#31A0E8",
       background: "#fff",
     },
   };

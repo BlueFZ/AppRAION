@@ -16,5 +16,8 @@ const Icons = {
   ChatSolid: require("../assets/icons/ChatSolid.png"),
   ProfileSolid: require("../assets/icons/ProfileSolid.png"),
   HomeSolid: require("../assets/icons/HomeSolid.png"),
+  Ticket: require("../assets/icons/Ticket.png"),
+  Like: require("../assets/icons/Like.png"),
+  Cam: require("../assets/icons/Cam.png"),
 };
 export default Icons;

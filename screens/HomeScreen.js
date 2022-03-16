@@ -16,6 +16,8 @@ import Styles from "../styles/Global";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Icons from "../constans/Icons";
 import Images from "../constans/Images";
+import HeaderSection from "../components/header/HeaderSection";
+import ItemOnce from "../components/tren/ItemOnce";
 
 const RenderHeader = () => {
   return (
@@ -98,7 +100,7 @@ const RenderMenu = () => {
 const RenderInformasi = () => {
   return (
     <TouchableOpacity
-      style={[tw`flex-row items-center shadow-md rounded-lg p-3 mt-5`]}
+      style={[tw`flex-row items-center shadow-md bg-white rounded-lg p-3 mt-5`]}
     >
       <Image
         source={Images.Information}
@@ -120,7 +122,9 @@ const RenderInformasi = () => {
 const RenderAlert = () => {
   return (
     <TouchableOpacity
-      style={[tw`flex-row items-center shadow-md rounded-lg p-3 mt-5`]}
+      style={[
+        tw`flex-row items-center shadow-md rounded-lg p-3 mt-5  bg-white`,
+      ]}
     >
       <View style={[tw`flex-col flex-1`]}>
         <Text style={[tw`font-bold`]}>
@@ -138,16 +142,6 @@ const RenderAlert = () => {
         </Text>
       </View>
     </TouchableOpacity>
-  );
-};
-const RenderHeaderSection = (props) => {
-  return (
-    <View style={[tw`flex-row my-5 justify-between items-center`]}>
-      <Text style={[tw`text-secondary text-lg font-bold`]}>{props.text}</Text>
-      <TouchableOpacity>
-        <Image source={Icons.ArrowRoundRight} />
-      </TouchableOpacity>
-    </View>
   );
 };
 const RenderEdukasiTerkini = () => {
@@ -190,35 +184,18 @@ const RenderEdukasiTerkini = () => {
     </View>
   );
 };
-const RenderItemTren = (props) => {
-  return (
-    <TouchableOpacity
-      style={[tw`flex-row p-5 items-center shadow-lg bg-white my-5 rounded-lg`]}
-    >
-      <Image source={props.image} style={[tw`w-24 h-24 rounded-lg mr-5  `]} />
-      <View style={[tw`flex-1`]}>
-        <Text style={[tw`underline`]}>{props.tag}</Text>
-        <Text style={[tw`font-bold`]}>{props.title}</Text>
-        <Text style={[tw``]}>{props.date}</Text>
-        <Text style={[tw`items-center`]}>
-          {" "}
-          <Image source={Icons.Group} /> {props.amountUser} peserta
-        </Text>
-      </View>
-    </TouchableOpacity>
-  );
-};
+
 const RenderSedangTren = () => {
   return (
     <View>
-      <RenderItemTren
+      <ItemOnce
         title="Premiere pro CC tutorial for beginner "
         tag="Webinar"
         date="Sel, 22 Mar 2022"
         amountUser="100.000"
         image={Images.Tren1}
       />
-      <RenderItemTren
+      <ItemOnce
         title="Lomba mendapatkan hatimu"
         tag="Lomba"
         date="Sel, 22 Mar 2022"
@@ -265,9 +242,9 @@ const HomeScreen = () => {
           <RenderMenu />
           <RenderInformasi />
           <RenderAlert />
-          <RenderHeaderSection text="Edukasi Terkini" />
+          <HeaderSection text="Edukasi Terkini" />
           <RenderEdukasiTerkini />
-          <RenderHeaderSection text="Sedang Tren!" />
+          <HeaderSection text="Sedang Tren!" />
           <RenderSedangTren />
           <RenderFriend />
         </View>
