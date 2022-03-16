@@ -5,6 +5,10 @@ const Styles = StyleSheet.create({
     marginLeft: 40,
     marginRight: 40,
   },
+  containerPadding: {
+    paddingLeft: 40,
+    paddingRight: 40,
+  },
 });
 
 export default Styles;

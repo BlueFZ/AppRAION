@@ -37,12 +37,16 @@ const LoginScreen = () => {
             <Text style={[tw`text-lg`]}>Yuk, Gabung bersama kami!</Text>
             <View style={[tw`mt-5`]}>
               <InputCustom title="Email" icon="email-outline" />
-              <InputCustom title="Password" icon="eye-outline" secureTextEntry={true} />
+              <InputCustom
+                title="Password"
+                icon="eye-outline"
+                secureTextEntry={true}
+              />
               <ButtonCustom
                 title="Masuk"
                 style={[tw`bg-primary my-5`]}
                 styleText={[tw`text-white`]}
-                onPress={() => Navigation.navigate("HomeScreen")}
+                onPress={() => Navigation.navigate("TabNavigation")}
               />
             </View>
             <Text

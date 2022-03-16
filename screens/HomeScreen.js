@@ -154,7 +154,7 @@ const RenderEdukasiTerkini = () => {
   return (
     <View style={[tw`flex-row`]}>
       <TouchableOpacity
-        style={[tw`flex-1 mr-2 px-6 py-3 shadow-lg bg-gray-100 items-center`]}
+        style={[tw`flex-1 mr-2 px-2 py-1 shadow-lg bg-gray-100 items-center`]}
       >
         <Image
           source={Images.News1}
@@ -166,12 +166,12 @@ const RenderEdukasiTerkini = () => {
           nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem
           felis nec erat
         </Text>
-        <Text style={[tw`font-bold items-center`]}>
+        <Text style={[tw`font-bold items-center text-xs`]}>
           Lihat selengkapnya <Image source={Icons.ArrowRightLong} />
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
-        style={[tw`flex-1 mr-2 px-6 py-3 shadow-lg bg-gray-100 items-center`]}
+        style={[tw`flex-1 mr-2 px-2 py-1 shadow-lg bg-gray-100 items-center`]}
       >
         <Image
           source={Images.News2}
@@ -183,7 +183,7 @@ const RenderEdukasiTerkini = () => {
           nulla ut commodo sagittis, sapien dui mattis dui, non pulvinar lorem
           felis nec erat
         </Text>
-        <Text style={[tw`font-bold items-center`]}>
+        <Text style={[tw`font-bold items-center text-xs`]}>
           Lihat selengkapnya <Image source={Icons.ArrowRightLong} />
         </Text>
       </TouchableOpacity>
@@ -196,7 +196,7 @@ const RenderItemTren = (props) => {
       style={[tw`flex-row p-5 items-center shadow-lg bg-white my-5 rounded-lg`]}
     >
       <Image source={props.image} style={[tw`w-24 h-24 rounded-lg mr-5  `]} />
-      <View>
+      <View style={[tw`flex-1`]}>
         <Text style={[tw`underline`]}>{props.tag}</Text>
         <Text style={[tw`font-bold`]}>{props.title}</Text>
         <Text style={[tw``]}>{props.date}</Text>
@@ -238,10 +238,10 @@ const RenderFriend = () => {
         style={[tw`w-16 h-16 rounded-full mr-0  `]}
       />
       <View style={[tw`flex-1`]}>
-        <Text style={[tw`font-bold text-lg text-right`]}>
+        <Text style={[tw`font-bold text-right`]}>
           Mau cari teman? Chatstud-in Aja!
         </Text>
-        <Text style={[tw`text-right`]}>
+        <Text style={[tw`text-right text-xs`]}>
           Forum terbuka bagi para pelajar untuk saling berbagi informasi dan
           ngobrol santai!
         </Text>

@@ -14,6 +14,7 @@ import ProfileScreen from "../screens/Teachfess/ProfileScreen";
 import ChatScreen from "../screens/Teachfess/ChatScreen";
 import LombaScreen from "../screens/Event/Lomba/LombaScreen";
 import WebinarScreen from "../screens/Event/Webinar/WebinarScreen";
+import TabNavigation from "./TabNavigation";
 
 const MainNavigation = () => {
   const Stack = createNativeStackNavigator();
@@ -31,13 +32,6 @@ const MainNavigation = () => {
         <Stack.Screen
           name="LoginScreen"
           component={LoginScreen}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="HomeScreen"
-          component={HomeScreen}
           options={{
             headerShown: false,
           }}
@@ -111,6 +105,13 @@ const MainNavigation = () => {
             headerShown: true,
           }}
           component={WebinarScreen}
+        />
+        <Stack.Screen
+          name="TabNavigation"
+          options={{
+            headerShown: false,
+          }}
+          component={TabNavigation}
         />
       </Stack.Navigator>
     </NavigationContainer>

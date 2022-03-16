@@ -10,5 +10,11 @@ const Icons = {
   ArrowRoundRight: require("../assets/icons/arrowcircleright.png"),
   ArrowRightLong: require("../assets/icons/ArrowRightLong.png"),
   Group: require("../assets/icons/Group.png"),
+  Chat: require("../assets/icons/Chat.png"),
+  Home: require("../assets/icons/Home.png"),
+  Profile: require("../assets/icons/Profile.png"),
+  ChatSolid: require("../assets/icons/ChatSolid.png"),
+  ProfileSolid: require("../assets/icons/ProfileSolid.png"),
+  HomeSolid: require("../assets/icons/HomeSolid.png"),
 };
 export default Icons;
