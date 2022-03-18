@@ -53,14 +53,14 @@ const MainNavigation = () => {
         <Stack.Screen
           name="NotificationScreen"
           options={{
-            headerShown: true,
+            headerShown: false,
           }}
           component={NotificationScreen}
         />
         <Stack.Screen
           name="EducationScreen"
           options={{
-            headerShown: true,
+            headerShown: false,
           }}
           component={EducationScreen}
         />

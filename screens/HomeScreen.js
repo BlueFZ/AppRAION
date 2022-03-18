@@ -20,13 +20,16 @@ import HeaderSection from "../components/header/HeaderSection";
 import ItemOnce from "../components/tren/ItemOnce";
 
 const RenderHeader = () => {
+  const Navigation = useNavigation();
   return (
     <View style={[tw`flex-row justify-between my-5 items-center`]}>
       <TouchableOpacity>
         <Image source={Icons.Burger} />
       </TouchableOpacity>
       <Text style={[tw`font-bold text-xl`]}>Home</Text>
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => Navigation.navigate("NotificationScreen")}
+      >
         <Image source={Icons.Notification} />
         <View
           style={[
@@ -39,6 +42,7 @@ const RenderHeader = () => {
 };
 
 const RenderSearch = () => {
+  const Navigation = useNavigation();
   return (
     <TouchableOpacity
       style={[
@@ -51,10 +55,11 @@ const RenderSearch = () => {
   );
 };
 const RenderMenu = () => {
+  const Navigation = useNavigation();
   return (
     <View style={[tw`flex-row justify-center mt-5`]}>
       <TouchableOpacity
-        // onPress={() => Navigation.navigate("EducationScreen")}
+        onPress={() => Navigation.navigate("EducationScreen")}
         style={[tw`justify-center items-center`]}
       >
         <View
@@ -68,7 +73,7 @@ const RenderMenu = () => {
       </TouchableOpacity>
 
       <TouchableOpacity
-        // onPress={() => Navigation.navigate("EventScreen")}
+        onPress={() => Navigation.navigate("EventScreen")}
         style={[tw`justify-center items-center`]}
       >
         <View
@@ -82,7 +87,7 @@ const RenderMenu = () => {
       </TouchableOpacity>
 
       <TouchableOpacity
-        // onPress={() => Navigation.navigate("TeachfessScreen")}
+        onPress={() => Navigation.navigate("TeachfessScreen")}
         style={[tw`justify-center items-center`]}
       >
         <View
@@ -98,6 +103,7 @@ const RenderMenu = () => {
   );
 };
 const RenderInformasi = () => {
+  const Navigation = useNavigation();
   return (
     <TouchableOpacity
       style={[tw`flex-row items-center shadow-md bg-white rounded-lg p-3 mt-5`]}
@@ -120,6 +126,7 @@ const RenderInformasi = () => {
   );
 };
 const RenderAlert = () => {
+  const Navigation = useNavigation();
   return (
     <TouchableOpacity
       style={[
@@ -145,6 +152,7 @@ const RenderAlert = () => {
   );
 };
 const RenderEdukasiTerkini = () => {
+  const Navigation = useNavigation();
   return (
     <View style={[tw`flex-row`]}>
       <TouchableOpacity
@@ -186,6 +194,7 @@ const RenderEdukasiTerkini = () => {
 };
 
 const RenderSedangTren = () => {
+  const Navigation = useNavigation();
   return (
     <View>
       <ItemOnce
@@ -206,6 +215,7 @@ const RenderSedangTren = () => {
   );
 };
 const RenderFriend = () => {
+  const Navigation = useNavigation();
   return (
     <TouchableOpacity
       style={[tw`flex-row p-5 items-center shadow-lg bg-white my-5 rounded-lg`]}

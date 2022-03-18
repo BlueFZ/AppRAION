@@ -20,13 +20,18 @@ import HeaderSection from "../../components/header/HeaderSection";
 import ItemOnce from "../../components/tren/ItemOnce";
 
 const RenderHeader = () => {
+  const Navigation = useNavigation();
   return (
     <View style={[tw`flex-row justify-between mt-5 mb-2 items-center`]}>
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => Navigation.navigate("ProfileScreen")}      
+      >
         <Image source={Icons.Profile} style={[{ tintColor: "black" }]} />
       </TouchableOpacity>
       <Text style={[tw`font-bold text-xl`]}>Chatstud</Text>
-      <TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => Navigation.navigate("NotificationScreen")}
+      >
         <Image source={Icons.Notification} />
         <View
           style={[
@@ -51,6 +56,7 @@ const RenderSearch = () => {
   );
 };
 const RenderMessage = () => {
+  const Navigation = useNavigation();
   return (
     <View
       style={[
