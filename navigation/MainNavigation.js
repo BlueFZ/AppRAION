@@ -12,9 +12,11 @@ import EventScreen from "../screens/Event/EventScreen";
 import TeachfessScreen from "../screens/Teachfess/TeachfessScreen";
 import ProfileScreen from "../screens/Teachfess/ProfileScreen";
 import ChatScreen from "../screens/Teachfess/ChatScreen";
-import LombaScreen from "../screens/Event/Lomba/LombaScreen";
-import WebinarScreen from "../screens/Event/Webinar/WebinarScreen";
+import LombaScreen from "../screens/Event/LombaScreen";
+import WebinarScreen from "../screens/Event/WebinarScreen";
 import TabNavigation from "./TabNavigation";
+import TipsScreen from "../screens/Edukasi/TipsScreen";
+import SearchScreen from "../screens/SearchScreen";
 
 const MainNavigation = () => {
   const Stack = createNativeStackNavigator();
@@ -53,7 +55,7 @@ const MainNavigation = () => {
         <Stack.Screen
           name="NotificationScreen"
           options={{
-            headerShown: false,
+            headerShown: true,
           }}
           component={NotificationScreen}
         />
@@ -67,7 +69,7 @@ const MainNavigation = () => {
         <Stack.Screen
           name="EventScreen"
           options={{
-            headerShown: true,
+            headerShown: false,
           }}
           component={EventScreen}
         />
@@ -95,14 +97,14 @@ const MainNavigation = () => {
         <Stack.Screen
           name="LombaScreen"
           options={{
-            headerShown: true,
+            headerShown: false,
           }}
           component={LombaScreen}
         />
         <Stack.Screen
           name="WebinarScreen"
           options={{
-            headerShown: true,
+            headerShown: false,
           }}
           component={WebinarScreen}
         />
@@ -112,6 +114,20 @@ const MainNavigation = () => {
             headerShown: false,
           }}
           component={TabNavigation}
+        />
+        <Stack.Screen
+          name="TipsScreen"
+          options={{
+            headerShown: false,
+          }}
+          component={TipsScreen}
+        />
+        <Stack.Screen
+          name="SearchScreen"
+          options={{
+            headerShown: false,
+          }}
+          component={SearchScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

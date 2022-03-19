@@ -28,7 +28,7 @@ const EducationScreen = () => {
          
           <Image
           source={require('../../icon/Search.png')}
-          style={{top: -28, left: 54}}
+          style={{top: -22, left: 54}}
           />
 
           <Image
@@ -40,7 +40,7 @@ const EducationScreen = () => {
             Edukasi Terkini
           </Text>
 
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => Navigation.navigate("TipsScreen")}>
             <View style={styles.tips}>
             <Image
               source={require('../../icon/meja.png')}
@@ -87,20 +87,38 @@ const EducationScreen = () => {
           <TouchableOpacity>
             <View style={styles.pelajar}>
             <Image
-              source={require('../../icon/jam.png')}
+              source={require('../../icon/buku.png')}
               style={{top: -5, left: 16}}
             />
 
             <Text style={{fontSize: 12}}>
-            Cara Memanage Waktu
+            Pelajar yang Produktif
             </Text>
 
             <Text style={{fontSize: 7}}>
-            Belajar merupakan aktivitas yang wajib dilakukan oleh semua orang terutama para pelajar.            
+            Pandemi COVID-19 ini membuat pelajar tidak melakukan kegiatan seperti biasanya.  Hal tersebut pelajar harus  beradaptasi dan tetap produktif di masa yang penuh tantangan ini. Nah, kali ini Edustation akan memberikan...            
             </Text>
 
             <Text style={{fontSize: 9, fontWeight: 'bold', position: 'absolute', top: 140, left: 38}}>
-              Lihat Selengkapnya
+            Lihat selengkapnya
+            </Text>
+
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity>
+            <View style={styles.siswa}>
+            <Image
+              source={require('../../icon/siswa.png')}
+              style={{top: -5, left: 16}}
+            />
+
+            <Text style={{fontSize: 12}}>
+            Menjadi Siswa Aktif!
+            </Text>
+
+            <Text style={{fontSize: 9, fontWeight: 'bold', position: 'absolute', top: 140, left: 38}}>
+            Lihat selengkapnya
             </Text>
 
             </View>
@@ -136,7 +154,7 @@ export default EducationScreen
       borderRadius: 50,
       borderColor: '#E6E6EA',
       backgroundColor: '#E6E6EA',
-      height: 41,
+      height: 28,
       fontSize: 13,
       paddingLeft: 40,
       paddingRight: 20,
@@ -168,6 +186,19 @@ export default EducationScreen
     },
 
     pelajar: {
+      borderRadius: 10,
+      paddingVertical: 14,
+      paddingHorizontal: 14,
+      backgroundColor: '#FAFAFA',
+      height: 159,
+      width: 159,
+      marginTop: 20,
+      top: -358,
+      left: 200,
+      elevation: 3,
+    },
+
+    siswa: {
       borderRadius: 10,
       paddingVertical: 14,
       paddingHorizontal: 14,

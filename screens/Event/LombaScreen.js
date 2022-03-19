@@ -2,14 +2,14 @@ import { View, Text, TouchableOpacity, Image, StyleSheet, TextInput} from 'react
 import React from 'react'
 import { useNavigation } from "@react-navigation/native";
 
-const EventScreen = () => {
+const WebinarScreen = () => {
     const Navigation = useNavigation();
   return (
     <View>
       <View>
           <TouchableOpacity 
           style={{top: 33}}
-          onPress={() => Navigation.navigate("TabNavigation")}
+          onPress={() => Navigation.navigate("EventScreen")}
           >
             <Image
               source={require('../../icon/back.png')}
@@ -17,11 +17,11 @@ const EventScreen = () => {
           </TouchableOpacity>
 
           <Text style={{left: 165, fontSize: 22,fontWeight: 'bold',}}>
-            Event
+            Lomba
           </Text>
 
           <TextInput
-          placeholder="Cari topik lain"
+          placeholder="Cari Lomba"
           style={styles.Search}
           >
           </TextInput>
@@ -32,92 +32,45 @@ const EventScreen = () => {
           />
         </View>
 
-        <Image
-          source={require('../../icon/garis1.png')}
-          style={{top: 195, left: 135}}
-        />
-        
-        <TouchableOpacity
-        onPress={() => Navigation.navigate("NotificationScreen")}
-        style={{top: -83, left: 355}}
-      >
-        <Image source={require('../../icon/Notification.png')} />
-      </TouchableOpacity>
-
-      <Image
-      style={{top: -10, width: '100%'}} 
-      source={require('../../icon/road.png')}
-      />
-
-      <View style={styles.daftar}>
         <TouchableOpacity>
-        <Image
-          style={{top: -8, left: 5}} 
-          source={require('../../icon/ticket.png')}
-        />
-        <Text style={{fontSize: 12, fontWeight: 'bold', position: 'absolute', top: -4, left: 45, color: 'white'}}>
-          Terdaftar
-        </Text>
+          <View style={styles.biru}>
+            <Text style={{position: 'absolute', fontSize: 13, fontWeight: 'bold', color: 'white', top: 4, left: 14}}>
+              Semua
+            </Text>
+          </View>
         </TouchableOpacity>
-      </View>
 
-      <Image
-          style={{top: -36, left: 193}} 
-          source={require('../../icon/batas.png')}
-      />
+        <TouchableOpacity style={styles.putih}>
+          <View>
+            <Text style={{position: 'absolute', fontSize: 13, fontWeight: 'bold', color: 'black', top: -10, left: 3}}>
+              UI/UX
+            </Text>
+          </View>
+        </TouchableOpacity>
 
-      <TouchableOpacity style={{top: -65, left: 210}}>
-        <View>
-        <Image
-          source={require('../../icon/like.png')}
-        />
-        <Text style={{fontSize: 12, fontWeight: 'bold', position: 'absolute', top: 3, left: 35, color: 'white'}}>
-          Tersimpan
-        </Text>
-        </View> 
-      </TouchableOpacity>
+        <TouchableOpacity style={styles.comp}>
+          <View>
+            <Text style={{position: 'absolute', fontSize: 13, fontWeight: 'bold', color: 'black', top: 5, left: 3}}>
+              Competitive Programming
+            </Text>
+          </View>
+        </TouchableOpacity>
 
-      <TouchableOpacity onPress={() => Navigation.navigate("WebinarScreen")}>
-        <Image
-            style={{top: -40, left: 125}} 
-            source={require('../../icon/webinar.png')}
-          />
-        <Text style={{fontSize: 12, position: 'absolute', top: 12, left: 130}}>
-          Webinar 
-        </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        onPress={() => Navigation.navigate("LombaScreen")}
-        style={{top: -93, left: 210}}
-      >
-      <Image 
-        source={require('../../icon/lomba.png')}
-      />
-      <Text style={{fontSize: 12, position: 'absolute', top: 50, left: 8}}>
-          Lomba
-        </Text>
-      </TouchableOpacity>
-
-      <Text style={{fontSize: 17, fontWeight: 'bold', position: 'absolute', top: 490, left: 8}}>
-        Webinar yang lagi Tren!
-      </Text>
-
-      <TouchableOpacity 
+        <TouchableOpacity 
         // onPress={() => Navigation.navigate("TipsScreen")} 
         >
             <View style={styles.tips}>
                 <Image
-                source={require('../../icon/cc.png')}
+                source={require('../../icon/Bola.png')}
                 style={{top: -5, left: 0}}
                 />
 
                 <Text style={{fontSize: 12, position: 'absolute', top: 5, left: 85}}>
-                    Webinar
+                    Lomba
                 </Text>
 
                 <Text style={{fontSize: 14, fontWeight: 'bold',position: 'absolute', top: 18, left: 85}}>
-                    Premiere Pro CC tutorial  
+                Lomba 3D Design  
                 </Text>
 
                 <Text style={{fontSize: 12, position: 'absolute', top: 35, left: 85}}>
@@ -145,16 +98,16 @@ const EventScreen = () => {
         >
             <View style={styles.ps}>
                 <Image
-                source={require('../../icon/ps.png')}
+                source={require('../../icon/kuning.png')}
                 style={{top: -5, left: 0}}
                 />
 
                 <Text style={{fontSize: 12, position: 'absolute', top: 5, left: 85}}>
-                    Webinar
+                    Lomba
                 </Text>
 
                 <Text style={{fontSize: 14, fontWeight: 'bold',position: 'absolute', top: 18, left: 85}}>
-                How to make a Waifu with PS                 
+                Lomba 2D Design               
                 </Text>
 
                 <Text style={{fontSize: 12, position: 'absolute', top: 35, left: 85}}>
@@ -181,8 +134,8 @@ const EventScreen = () => {
   )
 }
 
-export default EventScreen
-const styles = StyleSheet.create({
+export default WebinarScreen
+  const styles = StyleSheet.create({
 
   Search: {
     marginTop: 15,
@@ -194,19 +147,42 @@ const styles = StyleSheet.create({
     fontSize: 13,
     paddingLeft: 40,
     paddingRight: 20,
-    marginHorizontal: 40,
+    marginHorizontal: 35,
   },
 
-  daftar: {
+  biru: {
+    borderRadius: 50,
+    paddingVertical: 14,
+    paddingHorizontal: 14,
+    backgroundColor: '#31A0E8',
+    height: 20,
+    width: 72,
+    left: 40,
+    elevation: 3,
+  },
+  
+  putih: {
 
     borderRadius: 50,
-    paddingHorizontal: 14,
     paddingVertical: 14,
-    backgroundColor: '#FE4A49',
-    height: 36,
-    width: 284,
-    marginTop: 20,
-    left: 51,
+    paddingHorizontal: 14,
+    backgroundColor: '#F3F3F3',
+    height: 20,
+    width: 72,
+    top: -28,
+    left: 120,
+    elevation: 3,
+  },
+
+  comp: {
+
+    borderRadius: 50,
+    backgroundColor: '#F3F3F3',
+    height: 28,
+    width: 157,
+    top: -55,
+    left: 200,
+    elevation: 3,
   },
 
   tips: {
@@ -215,7 +191,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     backgroundColor: '#FAFAFA',
     height: 78,
-    width: 323,
+    width: 353,
     top: -13,
     left: 21,
     elevation: 3,
@@ -227,9 +203,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     backgroundColor: '#FAFAFA',
     height: 78,
-    width: 323,
+    width: 353,
     top: 10,
     left: 21,
     elevation: 3,
   },
+
 })

@@ -48,6 +48,7 @@ const RenderSearch = () => {
       style={[
         tw`flex-row justify-start my-5 items-center mx-5 p-2 bg-gray-100 rounded-full shadow-md `,
       ]}
+      onPress={() => Navigation.navigate("SearchScreen")}
     >
       <Image source={Icons.Search} />
       <Text style={[tw`text-gray-400 ml-2`]}>Telusuri</Text>
