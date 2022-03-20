@@ -10,5 +10,10 @@ const Images = {
   Friend: require("../assets/Images/Friend.png"),
   ProfileHeader: require("../assets/Images/Profileheader.png"),
   User: require("../assets/Images/User.png"),
+  ExampleLomba: require("../assets/Images/ExampleLomba.png"),
+  Chat1: require("../assets/Images/Chat1.png"),
+  Chat2: require("../assets/Images/Chat2.png"),
+  Chat3: require("../assets/Images/Chat3.png"),
+  Chat4: require("../assets/Images/Chat4.png"),
 };
 export default Images;

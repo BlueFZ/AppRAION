@@ -24,8 +24,15 @@ const Icons = {
   AddImage: require("../assets/icons/AddImage.png"),
   AddEmoji: require("../assets/icons/AddEmoji.png"),
   Messages: require("../assets/icons/Messages.png"),
+  Messages2: require("../assets/icons/Messages2.png"),
   Heart: require("../assets/icons/Heart.png"),
   Share: require("../assets/icons/Share.png"),
   More: require("../assets/icons/More.png"),
+  Share3: require("../assets/icons/Share3.png"),
+  BEM: require("../assets/icons/BEM.png"),
+  Calendar: require("../assets/icons/Calendar.png"),
+  Profile_2user: require("../assets/icons/Profile_2user.png"),
+  Archive_tick: require("../assets/icons/Archive_tick.png"),
+  Heart_half: require("../assets/icons/Heart_half.png"),
 };
 export default Icons;

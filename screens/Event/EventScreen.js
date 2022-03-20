@@ -1,195 +1,200 @@
-import { View, Text, TouchableOpacity, Image, StyleSheet, TextInput} from 'react-native'
-import React from 'react'
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  StyleSheet,
+  TextInput,
+  ScrollView,
+} from "react-native";
+import React from "react";
 import { useNavigation } from "@react-navigation/native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import tw from "../../lib/tailwind";
+import Styles from "../../styles/Global";
 
 const EventScreen = () => {
-    const Navigation = useNavigation();
+  const Navigation = useNavigation();
   return (
-    <View>
-      <View>
-          <TouchableOpacity 
-          style={{top: 33}}
-          onPress={() => Navigation.navigate("TabNavigation")}
-          >
-            <Image
-              source={require('../../icon/back.png')}
-            />
-          </TouchableOpacity>
-
-          <Text style={{left: 165, fontSize: 22,fontWeight: 'bold',}}>
-            Event
-          </Text>
-
-          <TextInput
-          placeholder="Cari topik lain"
-          style={styles.Search}
-          >
-          </TextInput>
-         
-          <Image
-          source={require('../../icon/Search.png')}
-          style={{top: -22, left: 54}}
-          />
-        </View>
-
-        <Image
-          source={require('../../icon/garis1.png')}
-          style={{top: 195, left: 135}}
-        />
-        
-        <TouchableOpacity
-        onPress={() => Navigation.navigate("NotificationScreen")}
-        style={{top: -83, left: 355}}
+    <SafeAreaView style={[tw`flex-1`]}>
+      <View
+        style={[
+          tw`flex-row justify-between items-center my-2`,
+          Styles.container,
+        ]}
       >
-        <Image source={require('../../icon/Notification.png')} />
-      </TouchableOpacity>
+        <TouchableOpacity onPress={() => Navigation.goBack()}>
+          <Image source={require("../../icon/back.png")} />
+        </TouchableOpacity>
 
-      <Image
-      style={{top: -10, width: '100%'}} 
-      source={require('../../icon/road.png')}
-      />
+        <Text style={{ fontSize: 22, fontWeight: "bold" }}>Event</Text>
 
-      <View style={styles.daftar}>
-        <TouchableOpacity>
-        <Image
-          style={{top: -8, left: 5}} 
-          source={require('../../icon/ticket.png')}
-        />
-        <Text style={{fontSize: 12, fontWeight: 'bold', position: 'absolute', top: -4, left: 45, color: 'white'}}>
-          Terdaftar
-        </Text>
+        <TouchableOpacity
+          onPress={() => Navigation.navigate("NotificationScreen")}
+        >
+          <Image source={require("../../icon/Notification.png")} />
         </TouchableOpacity>
       </View>
+      <ScrollView>
+        <View style={[tw`mb-5`]}>
+          <TextInput
+            placeholder="Cari topik lain"
+            style={styles.Search}
+          ></TextInput>
 
-      <Image
-          style={{top: -36, left: 193}} 
-          source={require('../../icon/batas.png')}
-      />
-
-      <TouchableOpacity style={{top: -65, left: 210}}>
-        <View>
-        <Image
-          source={require('../../icon/like.png')}
-        />
-        <Text style={{fontSize: 12, fontWeight: 'bold', position: 'absolute', top: 3, left: 35, color: 'white'}}>
-          Tersimpan
-        </Text>
-        </View> 
-      </TouchableOpacity>
-
-      <TouchableOpacity onPress={() => Navigation.navigate("WebinarScreen")}>
-        <Image
-            style={{top: -40, left: 125}} 
-            source={require('../../icon/webinar.png')}
+          <Image
+            source={require("../../icon/Search.png")}
+            style={{ top: -22, left: 54 }}
           />
-        <Text style={{fontSize: 12, position: 'absolute', top: 12, left: 130}}>
-          Webinar 
-        </Text>
-      </TouchableOpacity>
+        </View>
+        <Image
+          source={require("../../icon/garis1.png")}
+          style={{ top: 195, left: 135 }}
+        />
 
-      <TouchableOpacity
-        onPress={() => Navigation.navigate("LombaScreen")}
-        style={{top: -93, left: 210}}
-      >
-      <Image 
-        source={require('../../icon/lomba.png')}
-      />
-      <Text style={{fontSize: 12, position: 'absolute', top: 50, left: 8}}>
-          Lomba
-        </Text>
-      </TouchableOpacity>
+        <Image
+          style={{ top: -10, width: "100%" }}
+          source={require("../../icon/road.png")}
+        />
 
-      <Text style={{fontSize: 17, fontWeight: 'bold', position: 'absolute', top: 490, left: 8}}>
-        Webinar yang lagi Tren!
-      </Text>
-
-      <TouchableOpacity 
-        // onPress={() => Navigation.navigate("TipsScreen")} 
+        <View
+          style={[
+            tw`flex-row justify-center items-center bg-[#FE4A49] self-center px-5 rounded-full `,
+          ]}
         >
-            <View style={styles.tips}>
-                <Image
-                source={require('../../icon/cc.png')}
-                style={{top: -5, left: 0}}
-                />
+          <TouchableOpacity style={[tw`flex-row items-center mx-3`]}>
+            <Image
+              source={require("../../icon/ticket.png")}
+              style={[tw`mr-2`]}
+            />
+            <Text
+              style={{
+                fontSize: 12,
+                fontWeight: "bold",
+                color: "white",
+              }}
+            >
+              Terdaftar
+            </Text>
+          </TouchableOpacity>
+          <Image source={require("../../icon/batas.png")} />
+          <TouchableOpacity style={[tw`flex-row items-center mx-3`]}>
+            <Image source={require("../../icon/like.png")} style={[tw`mr-2`]} />
+            <Text
+              style={{
+                fontSize: 12,
+                fontWeight: "bold",
+                color: "white",
+              }}
+            >
+              Tersimpan
+            </Text>
+          </TouchableOpacity>
+        </View>
 
-                <Text style={{fontSize: 12, position: 'absolute', top: 5, left: 85}}>
-                    Webinar
-                </Text>
+        <View style={[tw`flex-row items-center justify-center my-5`]}>
+          <TouchableOpacity
+            onPress={() => Navigation.navigate("WebinarScreen")}
+            style={[tw`mx-2 items-center`]}
+          >
+            <Image source={require("../../icon/webinar.png")} />
+            <Text style={{ fontSize: 12 }}>Webinar</Text>
+          </TouchableOpacity>
 
-                <Text style={{fontSize: 14, fontWeight: 'bold',position: 'absolute', top: 18, left: 85}}>
-                    Premiere Pro CC tutorial  
-                </Text>
+          <TouchableOpacity
+            onPress={() => Navigation.navigate("LombaScreen")}
+            style={[tw`mx-2 items-center`]}
+          >
+            <Image source={require("../../icon/lomba.png")} />
+            <Text style={{ fontSize: 12 }}>Lomba</Text>
+          </TouchableOpacity>
+        </View>
 
-                <Text style={{fontSize: 12, position: 'absolute', top: 35, left: 85}}>
-                    Sel, 22 Mar 2022
-                </Text>
-
-                <Image
-                source={require('../../icon/Group.png')}
-                style={{top: -15, left: 73}}
-                />
-
-                <Text style={{fontSize: 10, position: 'absolute', top: 55, left: 98}}>
-                100.000 peserta
-                </Text>
-
-                <Image
-                source={require('../../icon/kanan.png')}
-                style={{top: -50, left: 273}}
-                />
-            </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity 
-        // onPress={() => Navigation.navigate("TipsScreen")} 
+        <Text
+          style={[
+            Styles.container,
+            {
+              fontSize: 17,
+              fontWeight: "bold",
+            },
+          ]}
         >
-            <View style={styles.ps}>
-                <Image
-                source={require('../../icon/ps.png')}
-                style={{top: -5, left: 0}}
-                />
+          Webinar yang lagi Tren!
+        </Text>
 
-                <Text style={{fontSize: 12, position: 'absolute', top: 5, left: 85}}>
-                    Webinar
-                </Text>
+        <TouchableOpacity
+          // onPress={() => Navigation.navigate("TipsScreen")}
+          style={[
+            tw`flex-row mt-5 items-center shadow-md bg-white rounded-md px-2 py-3`,
+            Styles.container,
+          ]}
+        >
+          <Image source={require("../../icon/cc.png")} />
 
-                <Text style={{fontSize: 14, fontWeight: 'bold',position: 'absolute', top: 18, left: 85}}>
-                How to make a Waifu with PS                 
-                </Text>
+          <View style={[tw`ml-5`]}>
+            <Text style={[tw`underline`, { fontSize: 12 }]}>Webinar</Text>
 
-                <Text style={{fontSize: 12, position: 'absolute', top: 35, left: 85}}>
-                    Sel, 22 Mar 2022
-                </Text>
+            <Text
+              style={{
+                fontSize: 14,
+                fontWeight: "bold",
+              }}
+            >
+              Premiere Pro CC tutorial
+            </Text>
 
-                <Image
-                source={require('../../icon/Group.png')}
-                style={{top: -15, left: 73}}
-                />
+            <Text style={{ fontSize: 12 }}>Sel, 22 Mar 2022</Text>
 
-                <Text style={{fontSize: 10, position: 'absolute', top: 55, left: 98}}>
-                100.000 peserta
-                </Text>
+            <View style={[tw`flex-row items-center`]}>
+              <Image source={require("../../icon/Group.png")} />
 
-                <Image
-                source={require('../../icon/kanan.png')}
-                style={{top: -50, left: 273}}
-                />
+              <Text style={{ fontSize: 10 }}>100.000 peserta</Text>
             </View>
+          </View>
         </TouchableOpacity>
+        <TouchableOpacity
+          // onPress={() => Navigation.navigate("TipsScreen")}
+          style={[
+            tw`flex-row mt-5 items-center shadow-md bg-white rounded-md px-2 py-3`,
+            Styles.container,
+          ]}
+        >
+          <Image source={require("../../icon/ps.png")} />
 
-    </View>
-  )
-}
+          <View style={[tw`ml-5`]}>
+            <Text style={[tw`underline`, { fontSize: 12 }]}>Webinar</Text>
 
-export default EventScreen
+            <Text
+              style={{
+                fontSize: 14,
+                fontWeight: "bold",
+              }}
+            >
+              How to make a Waifu with PS
+            </Text>
+
+            <Text style={{ fontSize: 12 }}>Sel, 22 Mar 2022</Text>
+
+            <View style={[tw`flex-row items-center`]}>
+              <Image source={require("../../icon/Group.png")} />
+
+              <Text style={{ fontSize: 10 }}>100.000 peserta</Text>
+            </View>
+          </View>
+        </TouchableOpacity>
+      </ScrollView>
+    </SafeAreaView>
+  );
+};
+
+export default EventScreen;
 const styles = StyleSheet.create({
-
   Search: {
     marginTop: 15,
     borderWidth: 1,
     borderRadius: 50,
-    borderColor: '#E6E6EA',
-    backgroundColor: '#E6E6EA',
+    borderColor: "#E6E6EA",
+    backgroundColor: "#E6E6EA",
     height: 28,
     fontSize: 13,
     paddingLeft: 40,
@@ -198,11 +203,10 @@ const styles = StyleSheet.create({
   },
 
   daftar: {
-
     borderRadius: 50,
     paddingHorizontal: 14,
     paddingVertical: 14,
-    backgroundColor: '#FE4A49',
+    backgroundColor: "#FE4A49",
     height: 36,
     width: 284,
     marginTop: 20,
@@ -213,7 +217,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingVertical: 14,
     paddingHorizontal: 14,
-    backgroundColor: '#FAFAFA',
+    backgroundColor: "#FAFAFA",
     height: 78,
     width: 323,
     top: -13,
@@ -225,11 +229,11 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingVertical: 14,
     paddingHorizontal: 14,
-    backgroundColor: '#FAFAFA',
+    backgroundColor: "#FAFAFA",
     height: 78,
     width: 323,
     top: 10,
     left: 21,
     elevation: 3,
   },
-})
+});

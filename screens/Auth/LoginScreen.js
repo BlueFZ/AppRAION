@@ -21,8 +21,8 @@ const LoginScreen = () => {
   return (
     <>
       <Image source={Images.LoginHeader} style={[tw`w-full `]} />
-      <View style={[tw`items-center absolute w-full top-15`]}>
-        <Image source={Images.Logo} />
+      <View style={[tw`items-center absolute w-full top-10`]}>
+        <Image source={Images.Logo} style={[tw`w-16 h-16`]} />
       </View>
 
       <SafeAreaView style={[tw`justify-between flex-1`]}>

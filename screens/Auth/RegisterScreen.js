@@ -32,7 +32,7 @@ const RegisterScreen = () => {
               placeholder="SMP/SMA/Pendidikan Tinggi/Lainnya"
               data={GradueItem}
             />
-            <InputCustom title="Nama Univ" />
+            <InputCustom title="Nama Unit" />
             <View style={[tw`flex-row items-center`]}>
               <CheckBox
                 checked={check}

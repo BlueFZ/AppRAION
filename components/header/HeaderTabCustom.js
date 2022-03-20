@@ -7,7 +7,7 @@ import { useNavigation } from "@react-navigation/native";
 const HeaderTabCustom = (props) => {
   const navigation = useNavigation();
   return (
-    <View style={[tw`flex-row items-center my-2`]}>
+    <View style={[tw`flex-row items-center my-2`, props.style]}>
       <TouchableOpacity onPress={() => navigation.goBack()}>
         <Image
           source={Icons.ArrowRight}

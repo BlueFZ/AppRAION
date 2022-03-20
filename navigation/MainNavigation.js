@@ -17,6 +17,7 @@ import WebinarScreen from "../screens/Event/WebinarScreen";
 import TabNavigation from "./TabNavigation";
 import TipsScreen from "../screens/Edukasi/TipsScreen";
 import SearchScreen from "../screens/SearchScreen";
+import ExampleEventScreen from "../screens/Event/ExampleEventScreen";
 
 const MainNavigation = () => {
   const Stack = createNativeStackNavigator();
@@ -67,13 +68,6 @@ const MainNavigation = () => {
           component={EducationScreen}
         />
         <Stack.Screen
-          name="EventScreen"
-          options={{
-            headerShown: false,
-          }}
-          component={EventScreen}
-        />
-        <Stack.Screen
           name="TeachfessScreen"
           options={{
             headerShown: true,
@@ -94,20 +88,7 @@ const MainNavigation = () => {
           }}
           component={ChatScreen}
         />
-        <Stack.Screen
-          name="LombaScreen"
-          options={{
-            headerShown: false,
-          }}
-          component={LombaScreen}
-        />
-        <Stack.Screen
-          name="WebinarScreen"
-          options={{
-            headerShown: false,
-          }}
-          component={WebinarScreen}
-        />
+
         <Stack.Screen
           name="TabNavigation"
           options={{
@@ -128,6 +109,13 @@ const MainNavigation = () => {
             headerShown: false,
           }}
           component={SearchScreen}
+        />
+        <Stack.Screen
+          name="ExampleEventScreen"
+          options={{
+            headerShown: false,
+          }}
+          component={ExampleEventScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

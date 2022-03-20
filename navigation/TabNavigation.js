@@ -7,6 +7,8 @@ import tw from "../lib/tailwind";
 import Styles from "../styles/Global";
 import Icons from "../constans/Icons";
 import ProfileNavigation from "./ProfileNavigation";
+import EventNavigation from "./EventNavigation";
+import TeachfessNavigation from "./TeachFessNavigation";
 
 const Tab = createBottomTabNavigator();
 const RenderItemMenu = (props) => {
@@ -87,6 +89,22 @@ function TabNavigation() {
           title: "Profile",
         }}
         component={ProfileNavigation}
+      />
+      <Tab.Screen
+        name="EventScreen"
+        options={{
+          headerShown: false,
+          title: "Event",
+        }}
+        component={EventNavigation}
+      />
+      <Tab.Screen
+        name="TeachfessScreen"
+        options={{
+          headerShown: false,
+          title: "Teachfess",
+        }}
+        component={TeachfessNavigation}
       />
     </Tab.Navigator>
   );
